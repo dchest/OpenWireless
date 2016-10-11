@@ -61,8 +61,8 @@ Diceware.prototype.random = function (min, max) {
     var range = max - min;
     
     var bits_needed = Math.ceil(Math.log2(range));
-    if (bits_needed > 53) {
-      throw new Exception("We cannot generate numbers larger than 53 bits.");
+    if (bits_needed > 31) {
+      throw new Exception("We cannot generate numbers larger than 31 bits.");
     }
     var bytes_needed = Math.ceil(bits_needed / 8);
     var mask = Math.pow(2, bits_needed) - 1; 
